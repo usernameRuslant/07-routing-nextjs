@@ -11,7 +11,7 @@ interface NotesProps {
   params: Promise<{ slug: string[] }>;
 }
 
-const getTag = async ({ params }: NotesProps) => {
+const Notes = async ({ params }: NotesProps) => {
   const { slug } = await params;
   console.log(slug);
 
@@ -33,4 +33,4 @@ const getTag = async ({ params }: NotesProps) => {
   );
 };
 
-export default getTag;
+export default Notes;
