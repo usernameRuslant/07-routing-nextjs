@@ -13,7 +13,6 @@ interface NotesProps {
 
 const Notes = async ({ params }: NotesProps) => {
   const { slug } = await params;
-  console.log(slug);
 
   const raw = slug[0] ? decodeURIComponent(slug[0]) : '';
   const tag = raw === 'All notes' ? undefined : raw;
