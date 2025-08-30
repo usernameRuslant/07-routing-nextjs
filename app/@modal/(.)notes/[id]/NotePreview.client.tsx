@@ -48,11 +48,15 @@ const NotePreview = () => {
       {note && (
         <div className={css.container}>
           <div className={css.item}>
+            <p className={css.tag}>{note.tag}</p>
             <div className={css.header}>
               <h2>{note.title}</h2>
             </div>
             <p className={css.content}>{note.content}</p>
             <p className={css.date}>{note.createdAt}</p>
+            <button onClick={onClose} className={css.backBtn}>
+              Back
+            </button>
           </div>
         </div>
       )}
