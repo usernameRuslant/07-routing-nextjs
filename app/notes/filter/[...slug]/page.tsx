@@ -16,6 +16,7 @@ const Notes = async ({ params }: NotesProps) => {
 
   const raw = slug[0] ? decodeURIComponent(slug[0]) : '';
   const tag = raw === 'All notes' ? undefined : raw;
+  // const tag = slug[0] === 'All notes' ? undefined : slug[0];
 
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
@@ -26,7 +27,7 @@ const Notes = async ({ params }: NotesProps) => {
   return (
     <Section>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <NotesClient tag={tag ?? ''} />
+        <NotesClient tag={tag} />
       </HydrationBoundary>
     </Section>
   );
